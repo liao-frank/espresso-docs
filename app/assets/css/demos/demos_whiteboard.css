@@ -1,0 +1,111 @@
+.demo-space {
+	position: relative;
+	width: 100%; height: 0;
+	padding-top: 66.66%;
+	margin-top: 40px;
+
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px 0px;
+	transform-style: preserve-3d;
+	transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	border-radius: 8px;
+}
+.demo-space.whiteboard-mode {
+
+}
+.demo-space.file-mode {
+	transform: rotateY(180deg);
+}
+.whiteboard,
+.file {
+	position: absolute;
+	top: 0; left: 0;
+	display: flex;
+	backface-visibility: hidden;
+	width: 100%; height: 100%;
+	border-radius: 8px;
+}
+.whiteboard {
+	z-index: 1;
+	background-color: #f9f9fb;
+}
+.whiteboard canvas {
+	height: 100%; width: 100%;
+	position: absolute;
+	z-index: -2;
+	left: 0; right: 0;
+	bottom: 0; top: 0;
+}
+.whiteboard .color {
+	position: relative;
+	top: 10px; left: 7px;
+	width: 28px; height: 28px;
+	margin: 0 5px;
+	border-radius: 50%;
+} .whiteboard .color.active:before,
+.whiteboard .color:hover:before {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px 1px;
+}
+.whiteboard .color:before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 50%; left: 50%;
+	width: 125%; height: 125%;
+	background-color: #fff;
+	border-radius: 50%;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px 0px;
+
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	transition: all 0.15s ease;
+	-webkit-transition: all 0.15s ease;
+}
+.whiteboard .color:nth-child(3) { background-color: #434A54; }
+.whiteboard .color:nth-child(4) { background-color: #ED5565; }
+.whiteboard .color:nth-child(5) { background-color: #5D9CEC; }
+.whiteboard .color:nth-child(6) { background-color: #48CFAD; }
+.whiteboard .color:nth-child(7) { background-color: #FFCE54; }
+.file {
+	border: 1px solid rgb(195, 195, 195);
+	background-color: #fff;
+	transform: rotateY(180deg);
+}
+.switch {
+	position: absolute;
+	top: 10px; right: 7px;
+	width: 28px; height: 28px;
+
+	-webkit-transition: all 0.15s ease;
+	transition: all 0.15s ease;
+}
+.switch:hover {
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+.switch.unclicked {
+	animation: blink ease-out 2s infinite;
+} 
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+.whiteboard .switch {
+	background-image: url(/images/icons/document_black.svg);
+}
+.file .switch {
+	background-image: url(/images/icons/brush_black.svg);
+	right: 12px;
+}
+
+@media only screen and (max-width: 515px) {
+	.switch {
+		display: none;
+	}
+}

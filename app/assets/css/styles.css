@@ -1,0 +1,174 @@
+.page-header {
+	position: relative;
+	width: 100%; height: 64px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #24292e;
+	
+	font-family: 'Nunito', sans-serif;
+}
+.page-header .content {
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 25px;
+}
+.page-header .logo {
+	top: 5px;
+	display: inline-block;
+	width: 165px; height: 54px;
+}
+.page-header nav {
+	display: inline-block;
+	max-height: 100%;
+	padding: 0 25px;
+	color: #fff;
+	font-size: 14px;
+	/*font-family: 'Open Sans', sans-serif;*/
+	letter-spacing: 0.6px;
+} .page-header nav ul {
+	height: 100%;
+	margin: 0; padding: 0;
+} .page-header nav ul li {
+	display: inline-block;
+	padding: 0 10px;
+}
+.page-header .right {
+	position: relative;
+	top: 50%;
+	width: 230px; min-height: 1px;
+	float: right;
+}
+.page-header .right iframe {
+	position: absolute;
+	top: 50%; left: 0;
+	width: 75px !important;
+	transform: translateY(-50%);
+}
+.page-header .right .button.download {
+	position: absolute;
+	top: 50%; right: 0;
+	transform: translateY(-50%);
+	color: #fff;
+}
+@media only screen and (max-width: 1023px) {
+	.page-header .right {
+		display: none;
+	}
+}
+@media only screen and (max-width: 650px) {
+	.page-header {
+		height: auto;
+	}
+	.page-header nav ul li {
+		padding: 0 0 6px 15px;
+	}
+	.page-header nav ul li:first-child {
+		padding-top: 6px;
+	}
+}
+/* Generic styles */
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+.content {
+	position: relative;
+	max-width: 980px;
+	margin: 0 auto;
+}
+.header {
+	font-family: 'Nunito', sans-serif;
+}
+.sub.header {
+	font-weight: normal;
+}
+.logo-text {
+	position: absolute;
+	bottom: 1px; left: 42px;
+
+	font-size: 22px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+	color: #fff;
+}
+.logo {
+	position: relative;
+	width: 100%; height: 100%;
+	/*border-radius: 50%;*/
+	/*background-color: #5ece91;*/
+	background-image: url('/images/icons/espresso.png');
+	background-position: left;
+	background-repeat: no-repeat;
+	/*background-size: 38%;*/
+	background-size: contain;
+	user-select: none;
+}
+.icon {
+	width: 100%; height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	user-select: none;
+}
+.button {
+	display: inline-block;
+
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 0.7px;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+
+	background: none;
+	border: none;
+	transition: all 0.25s ease;
+	-webkit-transition: all 0.25s ease;
+	user-select: none;
+}
+.button.round {
+	padding: 6px 12px;
+	border-radius: 14px;
+}
+.button.flat {
+	padding: 15px 20px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px 0px;
+	border-radius: 6px;
+}
+.button.flat:hover {
+	box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+a {
+	text-decoration: none;
+	color: inherit;
+
+	transition: filter 0.15s ease;
+	-webkit-transition: filter 0.15s ease;
+}
+a:hover {
+	filter: brightness(0.8);
+}
+@media only screen and (max-width: 515px) {
+	.content {
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+}
+/* Colors */
+.emerald {
+	background-color: #50c878;
+} .emerald-text {
+	color: #50c878;
+}
+.jade {
+	background-color: #00a86a;
+} .jade-text {
+	color: #00a86a;
+}
+.white {
+	background-color: #fff;
+} .white-text {
+	color: #fff;
+}
+
