@@ -1,0 +1,50 @@
+
+.demo-list {
+	width: fit-content;
+	margin: 0 auto;
+	padding: 0;
+
+	list-style-type: none;
+}
+.demo:not(:last-child) {
+	margin-bottom: 20px;
+}
+.demo .button {
+	position: relative;
+	width: 216px; height: 40px;
+	background-color: #fdfeff;
+
+	user-select: none;
+}
+.demo .icon {
+	position: absolute;
+	top: 50%; left: 10%;
+
+	width: 25%; height: 100%;
+	background-size: contain;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.demo label {
+	position: absolute;
+	top: 50%; left: 50%;
+
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 16px;
+	-webkit-transform: translateY(-50%) translateX(-10%);
+	transform: translateY(-50%) translateX(-10%);
+
+	cursor: pointer;
+}
+h2 {
+	width: fit-content;
+	margin: 20px auto;
+	margin-top: 70px;
+}
+@media only screen and (max-width: 515px) {
+	h2 {
+		margin-top: 30px;
+		font-size: 18px;
+	}
+}

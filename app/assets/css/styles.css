@@ -33,6 +33,9 @@
 	display: inline-block;
 	padding: 0 10px;
 }
+.page-header nav ul li a:hover {
+	filter: brightness(0.8);
+}
 .page-header .right {
 	position: relative;
 	top: 50%;
@@ -144,9 +147,6 @@ a {
 	transition: filter 0.15s ease;
 	-webkit-transition: filter 0.15s ease;
 }
-a:hover {
-	filter: brightness(0.8);
-}
 @media only screen and (max-width: 515px) {
 	.content {
 		box-sizing: border-box;
@@ -170,5 +170,16 @@ a:hover {
 	background-color: #fff;
 } .white-text {
 	color: #fff;
+}
+.dark-grey {
+	background-color: #24292e;
+	color: #fff;
+} .dark-grey-text {
+	color: #24292e;
+}
+.light-grey {
+	background-color: #F5F7FA;
+} .light-grey-text {
+	color: #F5F7FA;
 }
 

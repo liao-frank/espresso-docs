@@ -5,16 +5,22 @@ class DemosController extends BeanController {
 
 	demos(req, res) {
 
-		res.render({});
+		res.render({
+			__title : 'Demos'
+		});
 	}
 
 	chatroom(req, res) {
 
-		res.render({});
+		res.render({
+			__title : 'Chatroom Demo'
+		});
 	}
 
 	whiteboard(req, res) {
 
-		res.render({});
+		res.render({
+			__title : 'Whiteboard Demo'
+		});
 	}
 }
