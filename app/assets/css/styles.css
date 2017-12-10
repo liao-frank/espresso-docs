@@ -166,6 +166,12 @@ a {
 } .jade-text {
 	color: #00a86a;
 }
+.mint {
+	background-color: #48CFAD;
+	color: #fff;
+} .mint-text {
+	color: #48CFAD;
+}
 .white {
 	background-color: #fff;
 } .white-text {
@@ -182,4 +188,3 @@ a {
 } .light-grey-text {
 	color: #F5F7FA;
 }
-

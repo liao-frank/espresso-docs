@@ -30,8 +30,8 @@
 	top: 50%; left: 50%;
 
 	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 16px;
+	letter-spacing: 2px;
+	font-size: 15px;
 	-webkit-transform: translateY(-50%) translateX(-10%);
 	transform: translateY(-50%) translateX(-10%);
 
