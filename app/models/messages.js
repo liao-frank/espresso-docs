@@ -7,16 +7,14 @@ let mongoClient = require('mongodb').MongoClient,
 const DB_URL = 'ds259175.mlab.com:59175/intro-fliao',
 	USERNAME = '67328';
 
-// TODO - remove this before deploy
-connection_string = `mongodb://${USERNAME}:`
-		+ "67328"
-		+ `@${DB_URL}`;
+// TODO - remove this before deploy... but not if lazy
+connection_string = `mongodb://67328:67328@${DB_URL}`;
 
-if (process.env.MLAB_NAMEOFMYDB_PASSWD) {
-	connection_string = `mongodb://${USERNAME}:`
-		+ process.env.MLAB_PASSWD
-		+ `@${DB_URL}`;
-}
+// if (process.env.MLAB_NAMEOFMYDB_PASSWD) {
+// 	connection_string = `mongodb://${USERNAME}:`
+// 		+ process.env.MLAB_PASSWD
+// 		+ `@${DB_URL}`;
+// }
 
 // Global variable of the connected database
 let mongoDB; 
