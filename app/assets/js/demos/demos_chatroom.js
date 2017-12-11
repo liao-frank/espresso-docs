@@ -36,7 +36,7 @@ $(document).ready(function() {
 	});
 	// socket actions
 	socket.on('message', function(data) {
-		receiveMessage(data.content, data.nickname, data.nickname_salt);
+		receiveMessage(data);
 	});
 	socket.on('join', function(data) {
 		let to_add = {
@@ -83,15 +83,18 @@ function updateUsers() {
 	});
 	$users.append($list);
 }
-function receiveMessage(content, author, author_salt) {
+function receiveMessage(message) {
+	let content = message.content,
+		author = message.nickname,
+		author_salt = message.nickname_salt;
 	let $message_list = $('.messages ul');
 	let scrollHeight = $message_list[0].scrollHeight,
 		p_top = parseInt($message_list.css('padding-top').replace('px', ''));
 		p_bot = parseInt($message_list.css('padding-bottom').replace('px', ''));
 		// + 30 because of padding
 		scrollDiff = Math.abs($message_list.scrollTop() + $message_list.height() - scrollHeight + p_top + p_bot);
-	let from_self = (author == current.nickname) && (author_salt == current.salt);
-	let message = $(`<li class="${from_self ? 'self ' : ''}message"></li>`);
+	let from_self = (author == current.nickname) && (author_salt == current.nickname_salt);
+	message = $(`<li class="${from_self ? 'self ' : ''}message"></li>`);
 	$(message).html(`<div class="message-content"><label>${author || author_salt}</label>${escapeHtml(content)}</div>`);
 	$('.messages ul').append(message);
 	// check scroll
@@ -100,11 +103,15 @@ function receiveMessage(content, author, author_salt) {
 	}
 }
 function sendMessage(content) {
-	receiveMessage(content, current.nickname, current.salt);
+	receiveMessage({
+		content: content,
+		nickname: current.nickname,
+		nickname_salt: current.nickname_salt
+	});
 	socket.emit('message', {
 		content: content,
 		nickname: current.nickname,
-		nickname_salt: current.salt
+		nickname_salt: current.nickname_salt
 	});
 }
 function setCookie(cname, cvalue) {
