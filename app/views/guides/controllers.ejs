@@ -1,0 +1,77 @@
+<div class="content">
+	<article class="markdown-body">
+		<h1 id="controllers">Controllers</h1>
+		<div class="window">
+			<div class="header">
+				<span class="bullet bullet-red"></span><span class="bullet bullet-yellow"></span><span class="bullet bullet-green"></span><span class="title">/app/controllers/test_controller.js</span>
+			</div>
+			<div class="code">
+			</div>
+			<script type="text/javascript">
+				(function() {
+					let keywords = [
+						'TestController',
+						'BeanController',
+						'constructor',
+						'index'
+					];
+					let code = formatCode(`class TestController extends BeanController {
+	constructor() {
+		super();
+		let path = require('path').resolve();
+
+		// requiring npm modules
+		this.npm_module = cli.require('npm_module') || 
+			require(path + '/node_modules/npm_module');
+
+		// requiring custom modules i.e. your Model files
+		this.custom_module = require(path + '/helpers/custom_module.js');
+	}
+
+	index(req, res) {
+
+		res.render({});
+	}
+}`, keywords);
+					$('.code').last().html(code);
+					$('.code').addClass('show');
+				})();
+			</script>
+		</div>
+		<%- vanilla_controllers_markdown %>
+		<div class="window">
+			<div class="header">
+				<span class="bullet bullet-red"></span><span class="bullet bullet-yellow"></span><span class="bullet bullet-green"></span><span class="title">/app/controllers/test_controller.js</span>
+			</div>
+			<div class="code">
+			</div>
+			<script type="text/javascript">
+				(function() {
+					let keywords = [
+						'TestSocketedController',
+						'TestController',
+						'constructor',
+						'index_socket'
+					];
+					let code = formatCode(`class TestSocketedController extends TestController {
+	constructor() {
+		super();
+	}
+
+	index_socket(io, socket) {
+		socket.emit("connected", {});
+		// example socket action
+		socket.on("greeting", function() {
+			socket.emit({ msg: 'Welcome!' });
+		});
+	}
+}`, keywords);
+					$('.code').last().html(code);
+					$('.code').addClass('show');
+				})();
+			</script>
+		</div>
+		<%- socketed_controllers_markdown %>
+	</article>
+	
+</div>

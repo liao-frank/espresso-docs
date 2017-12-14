@@ -80,6 +80,21 @@
 .users ul .user {
 	margin: 10px 0;
 }
+.users .reset-user {
+	position: absolute;
+	bottom: 5px; right: 7px;
+	width: 36px; height: 36px;
+	background-image: url(/images/icons/reset-user.svg);
+
+	-webkit-transition: transform 0.15s ease;
+	transition: transform 0.15s ease;
+
+	cursor: pointer;
+}
+.users .reset-user:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
 .messages {
 	position: absolute;
 	z-index: -1;
@@ -173,8 +188,7 @@
 }
 .sources {
 	width: fit-content;
-	margin: 0 auto;
-	margin-top: 30px;
+	margin: 30px auto;
 }
 .sources a {
 	margin: 0 5px;
@@ -190,10 +204,23 @@ h2 {
 		font-size: 18px;
 	}
 	.demo-space {
+		padding-top: 100%;
 		margin: 10px auto;
 	}
 	.sources a {
 		display: block;
 		margin: 15px auto;
+	}
+	.message-content {
+		width: 70%;
+	}
+}
+@media only screen and (max-width: 950px) {
+	.users {
+		display: none;
+	}
+	.messages {
+		left: 0;
+		width: 100%;
 	}
 }

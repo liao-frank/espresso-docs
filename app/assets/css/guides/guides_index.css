@@ -1,0 +1,35 @@
+h2 {
+	width: fit-content;
+	margin: 20px auto;
+	margin-top: 70px;
+}
+h3, a {
+	margin: 0;
+}
+.guide-list a {
+	display: block;
+	font-size: 1.17em;
+	font-weight: bold;
+}
+.guide-list {
+	width: fit-content;
+	margin: 0 auto;
+	margin-top: 25px;
+	padding: 0;
+
+	list-style-type: none;
+}
+.guide-list li {
+	padding-bottom: 45px;
+	white-space: pre-line;
+	border-bottom: solid 1px #ccc;
+}
+body > .content {
+	max-width: 850px;
+}
+@media only screen and (max-width: 515px) {
+	h2 {
+		margin-top: 30px;
+		font-size: 18px;
+	}
+}
